@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+    <div id="#loginContainer" class="container p-0 d-flex flex-wrap align-content-end h-100">
+
+        <div class="w-100 text-center">
+            <img src="{% static 'ob.png' %}" style="width: 50px" alt="" class="img-fluid mb-5"><br>
+        </div>
+
+        <div id="information" style="display: none" class="p-4 h-60 w-100 bg-light login_screen">
+
+            <div class="w-100 h-100 d-flex flex-wrap align-content-center">
+                <div class="w-100 text-center mb-4">
+                    <span class="badge badge-info rounded-circle">1</span>
+                    <span>--</span>
+                    <span class="rounded-circle badge badge-light border-info border">2</span>
+                </div>
+
+
+                <input type="text" class="form-control input mb-3 form-control-sm" placeholder="Full Name">
+                <input type="text" class="form-control mb-3 input form-control-sm" placeholder="Country">
+                <input type="text" class="form-control input mb-3 form-control-sm" placeholder="City">
+                <input type="text" class="form-control mb-3 input form-control-sm" placeholder="Address">
+
+                <button type="button" onclick="login.screen('contact')" class="btn w-100 mb-2 btn-green">NEXT</button>
+
+                <a href="" class="btn w-100 btn-outline-green">LOGIN</a>
+
+
+            </div>
+
+        </div>
+
+        <div id="contact" style="display: none" class="p-4 h-60 w-100 bg-light login_screen">
+
+            <div class="w-100 h-100 d-flex flex-wrap align-content-center">
+                <div class="w-100 text-center mb-4">
+                    <span class="badge badge-light border border-info rounded-circle">1</span>
+                    <span>--</span>
+                    <span class="rounded-circle badge badge-info">2</span>
+                </div>
+
+                <label for="">Primary Contact</label><select name="contct_method" id="" class="form-control form-control-sm input mb-3">
+                    <option value="email">Email</option>
+                    <option value="mobile">Mobile</option>
+                </select>
+
+
+                <input type="email" class="form-control input mb-3 form-control-sm" placeholder="Email Address">
+                <input type="tel" class="form-control mb-3 input form-control-sm" placeholder="Mobile Number">
+
+                <div class="w-100 d-flex flex-wrap justify-content-between">
+                    <button type="button" onclick="login.screen('information')" class="btn w-45 mb-2 btn-warning btn-sm">BACK</button>
+                    <button type="button" class="btn w-45 mb-2 btn-success btn-sm">SUBMIT</button>
+                </div>
+
+                <a href="" class="btn w-100 btn-outline-green btn-sm">LOGIN</a>
+
+
+            </div>
+
+        </div>
+
+        <div id="success" class="p-4 h-60 w-100 bg-light login_screen">
+
+            <div class="w-100 h-100 d-flex flex-wrap align-content-center justify-content-center">
+
+                <i style="font-size: xxx-large" class="fa rounded-circle text-success border border-success p-2 fa-check" aria-hidden="true"></i>
+                <div class="text-center text-success mt-2">
+                    Registration successful, please check your email to activate your account
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+<script>
+    class Login{
+        screen(ss){
+            let screens = ['contact','information','success']
+            for (let i = 0; i < screens.length; i++) {
+                let this_screen = `#${screens[i]}`
+
+                console.log(`${screens[i]} and ${ss}`)
+
+                if(screens[i] === ss)
+                {
+
+                    $(this_screen).show()
+                }
+                else
+                {
+                    $(this_screen).hide()
+                }
+                console.log(this_screen)
+            }
+        }
+    }
+
+    let login = new Login()
+
+</script>
+
+{% endblock %}
+

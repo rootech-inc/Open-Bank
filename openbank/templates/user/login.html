@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div id="#loginContainer" class="container p-0 d-flex flex-wrap align-content-end h-100">
+
+
+        <div id="loginScreen" class="p-4 w-100 bg-light login_screen">
+
+            <div class="w-100 h-100 d-flex flex-wrap align-content-center">
+
+                <input type="text" class="form-control input mb-3 form-control-sm" placeholder="Email">
+                <input type="password" class="form-control mb-3 input form-control-sm" placeholder="Password">
+
+                <a href="#" class="btn w-100 mb-2 btn-green">AUTHENTICATE</a>
+
+                <a href="" class="btn w-100 btn-outline-green">REGISTER</a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+<script>
+    class Login{
+        screen(ss){
+            let screens = ['loginScreen']
+            for (let i = 0; i < screens.length; i++) {
+                let this_screen = `#${screens[i]}`
+
+                if(this_screen === ss)
+                {
+
+                    $(this_screen).show()
+                }
+                else
+                {
+                    $(this_screen).hide()
+                }
+                console.log(this_screen)
+            }
+        }
+    }
+
+    let login = new Login()
+
+</script>
+
+{% endblock %}
+

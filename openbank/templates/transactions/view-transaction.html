@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+    <div id="#loginContainer" class="container p-0 d-flex flex-wrap align-content-end h-100">
+
+        <div class="w-100 text-center">
+            <img src="{% static 'ob.png' %}" style="width: 50px" alt="" class="img-fluid mb-5"><br>
+        </div>
+
+
+
+        <div id="success" class="p-4 w-100 bg-light login_screen">
+
+            <div class="w-100 h-100 d-flex flex-wrap align-content-center justify-content-center">
+                <div class="clearfix mb-4 w-100">
+                  <small class="m-0 float-left">10-10-1010 10:00 AM</small>
+                  <small class="m-0 badge badge-success float-right">SENT</small>
+                </div>
+                <div class="alert text-center">
+                  <i style="font-size: xxx-large" class="fa rounded-circle text-success border border-success p-2 fa-check" aria-hidden="true"></i>
+                  <div class="text-center text-success mt-2">
+                      Transaction Successful
+                  </div>
+                </div>
+
+                  <div class="clearfix border-bottom mb-2 w-100">
+                      <small class="m-0 float-left">INI</small>
+                      <small class="m-0 float-right">$ 100.00</small>
+                  </div>
+                  <div class="clearfix border-bottom mb-2 w-100">
+                      <small class="m-0 float-left">SENT</small>
+                      <small class="m-0 float-right">$ 50.00</small>
+                  </div>
+                  <div class="clearfix border-bottom mb-2 w-100">
+                      <small class="m-0 float-left">AMT BAL</small>
+                      <small class="m-0 float-right">$50.00</small>
+                  </div>
+
+                <div class="w-100 text-center">
+                    <a href="/transactions/" class="fa nav-link p-0 btn fa-times-circle text-dark" style="font-size: xx-large"></a>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+{% endblock %}
+
