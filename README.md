@@ -1,5 +1,6 @@
 # Open Bank
-A Mobile Bank
+A Mobile Bank <br>
+This is a mobile focused app, desktop screen size is not yet taken into consideration
 
 ![mobile bank](openbank/wall.png)
 
@@ -18,7 +19,7 @@ The command should show a version of python installed. Otherwise if you get an e
 
 #### Git
 * [Fork](https://github.com/rootech-inc/Open-Bank/fork) this repository
-* Move to forked repository
+* Move to forked repository for 
 * Clone your repository (checkout branches `view` for testing and `main` for live deployment)
 
 #### Local Setup
