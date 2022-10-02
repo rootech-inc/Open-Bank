@@ -53,7 +53,7 @@
 
                 <div class="w-100 d-flex flex-wrap justify-content-between">
                     <button type="button" onclick="login.screen('information')" class="btn w-45 mb-2 btn-warning btn-sm">BACK</button>
-                    <button type="button" class="btn w-45 mb-2 btn-success btn-sm">SUBMIT</button>
+                    <button type="button" onclick="login.screen('success')" class="btn w-45 mb-2 btn-success btn-sm">SUBMIT</button>
                 </div>
 
                 <a href="" class="btn w-100 btn-outline-green btn-sm">LOGIN</a>
@@ -63,7 +63,7 @@
 
         </div>
 
-        <div id="success" class="p-4 h-60 w-100 bg-light login_screen">
+        <div id="success" style="display: none" class="p-4 h-60 w-100 bg-light login_screen">
 
             <div class="w-100 h-100 d-flex flex-wrap align-content-center justify-content-center">
 
@@ -103,6 +103,7 @@
     }
 
     let login = new Login()
+    login.screen('information')
 
 </script>
 
