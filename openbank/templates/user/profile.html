@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+    <div class="container bg-light h-100">
+
+        <div class="d_top py-2">
+            <div class="w-100 h-100 d-flex align-content-center flex-wrap">
+                <div class="h-100 d-flex flex-wrap align-content-center mr-2">
+                    <img src="{% static 'users/bg.png' %}" alt="" class="img-fluid rounded-circle profile_dp">
+                </div>
+                <div class="h-100 d-flex flex-wrap align-content-center">
+                    <p class="w-100 m-0 p-0"><strong>Jane Doe</strong></p>
+                    <p class="m-0 text-green"><small>Account Base</small></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="d_middle">
+            <div class="mb-2">
+                <strong>ACCOUNT</strong>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between mb-1">
+                <span><i class="fa text-green fa-inbox mr-2"></i> Messages</span>
+                <a><i class="fa text-green fa-arrow-circle-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between mb-1">
+                <span><i class="fa text-green fa-credit-card mr-2"></i> Card Settings</span>
+                <a><i class="fa text-green fa-arrow-circle-right" aria-hidden="true"></i></a>
+            </div>
+            <hr>
+
+            <div class="mb-2">
+                <strong>App</strong>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between mb-1">
+                <span><i class="fa text-green fa-gear mr-2"></i> Settings</span>
+                <a><i class="fa text-green fa-arrow-circle-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between mb-1">
+                <span><i class="fa text-green fa-shield mr-2"></i> Security</span>
+                <a><i class="fa text-green fa-arrow-circle-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between mb-1">
+                <span><i class="fa text-green fa-bell mr-2"></i> Notifications</span>
+                <a><i class="fa text-green fa-arrow-circle-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between mb-1">
+                <span><i class="fa text-green fa-question-circle mr-2"></i> Help Center</span>
+                <a><i class="fa text-green fa-arrow-circle-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between mb-1">
+                <span><i class="fa text-green fa-info-circle mr-2"></i> Info</span>
+                <a><i class="fa text-green fa-arrow-circle-right" aria-hidden="true"></i></a>
+            </div>
+
+        </div>
+
+        <div class="d_top d-flex flex-wrap align-content-center justify-content-center">
+            <button href="" class="fa nav-link p-0 btn fa-times-circle text-dark" style="font-size: xx-large"></button>
+        </div>
+
+    </div>
+
+
+{% endblock %}
+

@@ -1,0 +1,101 @@
+body
+{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden !important;
+    background: #E3EBEE !important;
+}
+
+.h-fit{height: fit-content !important}
+
+#loginContainer
+{
+
+}
+
+.login_screen
+{
+    border-radius: 60px 60px 0 0 !important;
+}
+
+.w-45{width: 45% !important}
+.h-60{height: 60% !important}
+
+.d_top{height: 10%}
+.d_middle{height: 80%}
+
+.profile_dp{height: 100%}
+
+
+textarea:focus,
+textarea.form-control:focus,
+input.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus,
+[type=email].form-control:focus,
+[type=tel].form-control:focus,
+[contenteditable].form-control:focus,select:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
+.btn-green{color: #fff;background-color: #07877D;border-color: #000000;}
+.btn-green:hover{color: #fff;background-color: #06655e;border-color: #000000;}
+.btn-green:focus{color: #fff;background-color: #06655e;border-color: #000000;}
+.btn-outline-green {background-color: #fff;border-color: #07877D;color: #07877D;}
+.btn-outline-green:hover{background-color: #07877D;border-color: #07877D;color: #fff;}
+.btn-outline-green:focus{background-color: #07877D;border-color: #07877D;color: #fff;}
+.input{border-top: 0 !important;border-right: 0 !important;border-left: 0 !important;border-bottom: 1px solid #ccc !important;background: inherit !important;}
+.input:focus{border-top: 0 !important;border-right: 0 !important;border-left: 0 !important;border-bottom: 1px solid #ccc !important;background: inherit !important;outline: none!important;}
+.input:active{border-top: 0 !important;border-right: 0 !important;border-left: 0 !important;border-bottom: 1px solid #ccc !important;background: inherit !important; outline:none !important}
+
+.text-green{color: #07877D !important}
+
+.open_card{
+    height: 200px;
+    width: 354px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgb(32,36,38);
+    background: -moz-linear-gradient(90deg, rgba(32,36,38,1) 0%, rgba(61,72,77,1) 35%);
+    background: -webkit-linear-gradient(90deg, rgba(32,36,38,1) 0%, rgba(61,72,77,1) 35%);
+    background: linear-gradient(90deg, rgba(32,36,38,1) 0%, rgba(61,72,77,1) 35%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#202426",endColorstr="#3d484d",GradientType=1);
+    color: #FFFFFF;
+
+}
+
+.home_button
+{
+    height: 120px;
+    width: 100%;
+    font-size: small;
+    text-align: center;
+    overflow: hidden;
+}
+
+.tr_container{
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.tran_header{
+    font-size: 16px !important;
+    font-weight: bold;
+}
+.tr_container p{
+    font-size: 14px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #202426;
+}
+.tr_ico{
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+
+}
