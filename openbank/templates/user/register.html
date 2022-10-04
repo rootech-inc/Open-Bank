@@ -19,10 +19,11 @@
                 </div>
 
 
-                <input type="text" class="form-control input mb-3 form-control-sm" placeholder="Full Name">
-                <input type="text" class="form-control mb-3 input form-control-sm" placeholder="Country">
-                <input type="text" class="form-control input mb-3 form-control-sm" placeholder="City">
-                <input type="text" class="form-control mb-3 input form-control-sm" placeholder="Address">
+                <input type="text" id="full_name" required class="form-control input mb-3 form-control-sm" placeholder="Full Name">
+                <div id="name_error"></div>
+                <input type="text" id="country" required class="form-control mb-3 input form-control-sm" placeholder="Country">
+                <input type="text" id="city" required class="form-control input mb-3 form-control-sm" placeholder="City">
+                <input type="text" id="address" required class="form-control mb-3 input form-control-sm" placeholder="Address">
 
                 <button type="button" onclick="login.screen('contact')" class="btn w-100 mb-2 btn-green">NEXT</button>
 
@@ -82,23 +83,49 @@
 <script>
     class Login{
         screen(ss){
-            let screens = ['contact','information','success']
-            for (let i = 0; i < screens.length; i++) {
-                let this_screen = `#${screens[i]}`
 
-                console.log(`${screens[i]} and ${ss}`)
+            let form_error = 0
+            let form_error_msg = ''
+            if(ss === 'contact')
+            {
+                // validate information
+                let full_name,country,city,address
+                full_name = $('#full_name')
+                country = $('#country')
+                city = $('#city')
+                address = $('#address')
 
-                if(screens[i] === ss)
+                if(full_name.val().length < 1)
                 {
+                    form_error += 1
+                    full_name.addClass('bg-danger')
+                }
 
-                    $(this_screen).show()
-                }
-                else
-                {
-                    $(this_screen).hide()
-                }
-                console.log(this_screen)
+
             }
+
+            if(form_error === 0)
+            {
+                let screens = ['contact','information','success']
+                for (let i = 0; i < screens.length; i++) {
+                    let this_screen = `#${screens[i]}`
+
+                    console.log(`${screens[i]} and ${ss}`)
+
+                    if(screens[i] === ss)
+                    {
+
+                        $(this_screen).show()
+                    }
+                    else
+                    {
+                        $(this_screen).hide()
+                    }
+                    console.log(this_screen)
+                }
+            }
+
+
         }
     }
 
