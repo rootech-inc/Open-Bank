@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+    <div class="container p-2 bg-light h-100">
+
+
+        <div style="height: 100% !important" class="overflow-hidden d-flex flex-wrap align-content-between justify-content-center">
+
+            <form method="post" action="{% url 'save_acct' %}" class="row w-100 d-flex flex-wrap align-content-center justify-content-center h-100">
+                {% csrf_token %}
+                <div class="col-sm-6">
+                    <div class="card w-100">
+                        <div class="card-header">Creating Account</div>
+                        <input type="hidden" name="acct" value="{{ acct.pk }}">
+                        <div class="card-body">
+                            <div class="input-group mb-2">
+                                <label class="w-100">Title
+                                    <input type="text" required name="acct_descr" class="form-control rounded-0">
+                                </label>
+                            </div>
+                            <div class="input-group mb-2">
+                                <label class="w-100">Account Number
+                                    <div class="input-group">
+
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">{{ acct.acct_pref }} - </span>
+                                        </div>
+
+                                        <input type="text" required readonly value="{{ oct.1 }}{{ oct.2 }}{{oct.3}}" name="acct_no" class="form-control rounded-0">
+                                    </div>
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="card-footer"><button class="btn btn-success rounded-0 w-100">SAVE</button></div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+
+    </div>
+
+
+{% endblock %}
+

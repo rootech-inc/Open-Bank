@@ -36,7 +36,46 @@
                 </div>
 
                 <div class="w-50 p-1">
-                    <button class="btn btn-outline-green w-100 rounded-0 home_button"><i class="fa fa-paper-plane"></i> <br> TRANSFER</button>
+                    <button data-toggle="modal" data-target="#transfer" class="btn btn-outline-green w-100 rounded-0 home_button"><i class="fa fa-paper-plane"></i> <br> TRANSFER</button>
+                    <div class="modal fade" id="transfer">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <strong class="modal-title">Transfer</strong>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">SEND FR</span>
+                                        </div>
+                                        <select name="from" id="from"  class="form-control rounded-0">
+                                            <option selected value="0">Select Account</option>
+                                            {% for accts in my_accts %}
+                                                <option selected value="">Select Account</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">SEND TO</span>
+                                        </div>
+                                        <select name="to" id="to"  class="form-control rounded-0">
+                                            <option selected value="0">Select Account</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group mb-2">
+                                        <label class="w-100">Amount
+                                            <input type="number" required class="form-control rounded-0">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" onclick="transaction()" class="btn btn-success rounded-0 w-100">PROCEED</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
 
                 <div class="w-50 p-1">

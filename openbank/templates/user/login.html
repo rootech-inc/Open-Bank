@@ -10,21 +10,32 @@
             <img src="{% static 'ob.png' %}" style="width: 50px" alt="" class="img-fluid mb-5"><br>
         </div>
 
-        <div id="loginScreen" class="p-4 w-100 bg-light login_screen">
+        <form method="post" action="{% url 'auth' %}" id="loginScreen" class="p-4 w-100 bg-light login_screen">
+            {% csrf_token %}
+            {% if messages %}
+                            {% for message in messages %}
+
+                                <div class="alert alert-danger alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Error!</strong> {{ message }}
+                              </div>
+
+                            {% endfor %}
+                        {% endif %}
 
             <div class="w-100 h-100 d-flex flex-wrap align-content-center">
+                <input type="hidden" name="next" value="{{ next }}">
+                <input autocomplete="off" required type="text" class="form-control input mb-3 form-control-sm" name="username" placeholder="username">
+                <input autocomplete="off" required type="password" class="form-control mb-3 input form-control-sm" name="password" placeholder="Password">
 
-                <input type="text" class="form-control input mb-3 form-control-sm" placeholder="Email">
-                <input type="password" class="form-control mb-3 input form-control-sm" placeholder="Password">
-
-                <a href="#" class="btn w-100 mb-2 btn-green">AUTHENTICATE</a>
+                <button type="submit" class="btn w-100 mb-2 btn-green">AUTHENTICATE</button>
 
                 <a href="{% url 'register' %}" class="btn w-100 btn-outline-green">REGISTER</a>
 
 
             </div>
 
-        </div>
+        </form>
 
     </div>
 

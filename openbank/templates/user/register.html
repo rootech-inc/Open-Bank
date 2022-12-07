@@ -3,8 +3,8 @@
 
 {% block body %}
 
-    <div id="#loginContainer" class="container p-0 d-flex flex-wrap align-content-end h-100">
-
+    <form method="post" action="{% url 'sign_up' %}" id="loginContainer" class="container p-0 d-flex flex-wrap align-content-end h-100">
+        {% csrf_token %}
         <div class="w-100 text-center">
             <img src="{% static 'ob.png' %}" style="width: 50px" alt="" class="img-fluid mb-5"><br>
         </div>
@@ -19,11 +19,12 @@
                 </div>
 
 
-                <input type="text" id="full_name" required class="form-control input mb-3 form-control-sm" placeholder="Full Name">
+                <input type="text" id="first_name" name="first_name" required class="form-control input mb-3 form-control-sm" placeholder="First Name">
+                <input type="text" id="last_name" name="last_name" required class="form-control input mb-3 form-control-sm" placeholder="Last Name">
                 <div id="name_error"></div>
-                <input type="text" id="country" required class="form-control mb-3 input form-control-sm" placeholder="Country">
-                <input type="text" id="city" required class="form-control input mb-3 form-control-sm" placeholder="City">
-                <input type="text" id="address" required class="form-control mb-3 input form-control-sm" placeholder="Address">
+                <input type="text" id="country" name="country" required class="form-control mb-3 input form-control-sm" placeholder="Country">
+                <input type="text" id="city" name="city" required class="form-control input mb-3 form-control-sm" placeholder="City">
+                <input type="text" id="address" name="address" required class="form-control mb-3 input form-control-sm" placeholder="Address">
 
                 <button type="button" onclick="login.screen('contact')" class="btn w-100 mb-2 btn-green">NEXT</button>
 
@@ -49,12 +50,13 @@
                 </select>
 
 
-                <input type="email" class="form-control input mb-3 form-control-sm" placeholder="Email Address">
-                <input type="tel" class="form-control mb-3 input form-control-sm" placeholder="Mobile Number">
+                <input type="email" class="form-control input mb-3 form-control-sm" name="email" placeholder="Email Address">
+                <input type="tel" class="form-control mb-3 input form-control-sm" name="mobile" placeholder="Mobile Number">
+                <input type="password" name="password" class="form-control form-control-sm mb-2" required placeholder="Password">
 
                 <div class="w-100 d-flex flex-wrap justify-content-between">
                     <button type="button" onclick="login.screen('information')" class="btn w-45 mb-2 btn-warning btn-sm">BACK</button>
-                    <button type="button" onclick="login.screen('success')" class="btn w-45 mb-2 btn-success btn-sm">SUBMIT</button>
+                    <button type="submit" class="btn w-45 mb-2 btn-success btn-sm">SUBMIT</button>
                 </div>
 
                 <a href="" class="btn w-100 btn-outline-green btn-sm">LOGIN</a>
@@ -78,7 +80,7 @@
 
         </div>
 
-    </div>
+    </form>
 
 <script>
     class Login{
@@ -86,11 +88,12 @@
 
             let form_error = 0
             let form_error_msg = ''
+            console.log(ss)
             if(ss === 'contact')
             {
                 // validate information
                 let full_name,country,city,address
-                full_name = $('#full_name')
+                full_name = $('#first_name')
                 country = $('#country')
                 city = $('#city')
                 address = $('#address')
@@ -102,6 +105,11 @@
                 }
 
 
+            }
+
+            if(ss === 'success')
+            {
+                $('#loginContainer').submit()
             }
 
             if(form_error === 0)
@@ -123,6 +131,9 @@
                     }
                     console.log(this_screen)
                 }
+            } else
+            {
+                alert('There is an error inform')
             }
 
 

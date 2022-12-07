@@ -21,5 +21,6 @@ from home import views
 
 urlpatterns = [
     path('',views.home,name='home'),
+    path('save_acct/',views.save_acct,name='save_acct')
 
 ]
